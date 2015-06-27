@@ -524,12 +524,12 @@ const char *SPMySQLSSLPermissibleCiphers = "DHE-RSA-AES256-SHA:AES256-SHA:DHE-RS
 	const char *theHost = NULL;
 	const char *theUsername = "";
 	const char *thePassword = NULL;
-    const char *theDatabase = NULL;
+	const char *theDatabase = NULL;
 	const char *theSocket = NULL;
 
 	if (host) theHost = [self _cStringForString:host];
 	if (username) theUsername = [self _cStringForString:username];
-    if (database) theDatabase = [self _cStringForString:database];
+	if (database) theDatabase = [self _cStringForString:database];
 
 	// If a password was supplied, use it; otherwise ask the delegate if appropriate
 	if (password) {
