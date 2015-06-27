@@ -100,6 +100,8 @@ static NSString *SPLocalhostAddress = @"127.0.0.1";
 	
 	// Set up shared details
 	[mySQLConnection setUsername:[self user]];
+	// Set up default database
+	[mySQLConnection setDatabase:[self database]];
 	
 	// Initialise to socket if appropriate.
 	if ([self type] == SPSocketConnection) {

@@ -59,6 +59,7 @@ const char *SPMySQLSSLPermissibleCiphers = "DHE-RSA-AES256-SHA:AES256-SHA:DHE-RS
 @synthesize username;
 @synthesize password;
 @synthesize port;
+@synthesize database;
 @synthesize useSocket;
 @synthesize socketPath;
 @synthesize useSSL;
@@ -523,10 +524,12 @@ const char *SPMySQLSSLPermissibleCiphers = "DHE-RSA-AES256-SHA:AES256-SHA:DHE-RS
 	const char *theHost = NULL;
 	const char *theUsername = "";
 	const char *thePassword = NULL;
+    const char *theDatabase = NULL;
 	const char *theSocket = NULL;
 
 	if (host) theHost = [self _cStringForString:host];
 	if (username) theUsername = [self _cStringForString:username];
+    if (database) theDatabase = [self _cStringForString:database];
 
 	// If a password was supplied, use it; otherwise ask the delegate if appropriate
 	if (password) {
@@ -567,7 +570,7 @@ const char *SPMySQLSSLPermissibleCiphers = "DHE-RSA-AES256-SHA:AES256-SHA:DHE-RS
 		mysql_ssl_set(theConnection, theSSLKeyFilePath, theSSLCertificatePath, theCACertificatePath, NULL, theSSLCiphers);
 	}
 
-	MYSQL *connectionStatus = mysql_real_connect(theConnection, theHost, theUsername, thePassword, NULL, (unsigned int)port, theSocket, SPMySQLConnectionOptions);
+	MYSQL *connectionStatus = mysql_real_connect(theConnection, theHost, theUsername, thePassword, theDatabase, (unsigned int)port, theSocket, SPMySQLConnectionOptions);
 
 	// If the connection failed, return NULL
 	if (theConnection != connectionStatus) {

@@ -71,7 +71,8 @@
 	NSConditionLock *connectionLock;
 
 	// Currently selected database
-	NSString *database, *databaseToRestore;
+    // NSString *database;
+    NSString *database, *databaseToRestore;
 
 	// Delegate connection lost decisions
 	NSUInteger reconnectionRetryAttempts;
@@ -135,6 +136,7 @@
 @property (readwrite, retain) NSString *host;
 @property (readwrite, retain) NSString *username;
 @property (readwrite, retain) NSString *password;
+@property (readwrite, retain) NSString *database;
 @property (readwrite, assign) NSUInteger port;
 @property (readwrite, assign) BOOL useSocket;
 @property (readwrite, retain) NSString *socketPath;
