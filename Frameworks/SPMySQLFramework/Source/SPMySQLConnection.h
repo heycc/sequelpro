@@ -71,7 +71,7 @@
 	NSConditionLock *connectionLock;
 
 	// Currently selected database
-    NSString *database, *databaseToRestore;
+	NSString *database, *databaseToRestore;
 
 	// Delegate connection lost decisions
 	NSUInteger reconnectionRetryAttempts;
