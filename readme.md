@@ -1,6 +1,8 @@
 Sequel Pro                <img alt="Logo" src="http://www.sequelpro.com/blog/wp-content/uploads/2013/01/sequel-pro-1.0.png" align="right" height="50">
 ==========
 
+Use the default database when connecting to mysql, if provided. That's crucial when using the Cobar mysql proxy, otherwise Sequel Pro crashed.
+
 Sequel Pro is a fast, easy-to-use Mac database management application for working with MySQL databases.
 
 You can find more details on our website: [sequelpro.com](http://sequelpro.com)
